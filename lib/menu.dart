@@ -5,6 +5,12 @@ class Menu extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Row(
+      children: const [
+        Text('Favorites'),
+        Text('Master bedroom'),
+        Text('Small bedroom'),
+      ],
+    );
   }
 }
