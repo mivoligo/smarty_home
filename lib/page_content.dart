@@ -6,6 +6,9 @@ class PageContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CardButton();
+    return const CardButton(
+      iconData: Icons.lightbulb,
+      backgroundColor: Colors.blue,
+    );
   }
 }
