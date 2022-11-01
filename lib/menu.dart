@@ -12,20 +12,23 @@ class _MenuState extends State<Menu> {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: places
-          .map(
-            (item) => MenuItem(
-              name: item,
-              onTap: () {
-                setState(() {
-                  selectedIndex = places.indexOf(item);
-                });
-              },
-              isSelected: selectedIndex == places.indexOf(item),
-            ),
-          )
-          .toList(),
+    return SingleChildScrollView(
+      scrollDirection: Axis.horizontal,
+      child: Row(
+        children: places
+            .map(
+              (item) => MenuItem(
+                name: item,
+                onTap: () {
+                  setState(() {
+                    selectedIndex = places.indexOf(item);
+                  });
+                },
+                isSelected: selectedIndex == places.indexOf(item),
+              ),
+            )
+            .toList(),
+      ),
     );
   }
 }

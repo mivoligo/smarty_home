@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 
 import 'home.dart';
@@ -27,6 +29,17 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: const Home(),
+      scrollBehavior: MyScrollBehavior(),
     );
+  }
+}
+
+class MyScrollBehavior extends ScrollBehavior {
+  @override
+  Set<PointerDeviceKind> get dragDevices {
+    return {
+      PointerDeviceKind.mouse,
+      PointerDeviceKind.touch,
+    };
   }
 }
