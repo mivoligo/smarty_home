@@ -18,24 +18,27 @@ class CardButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      color: backgroundColor,
-      elevation: 8,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(32)),
-      child: Row(
-        children: [
-          LeftSide(
-            color: color,
-            iconData: iconData,
-          ),
-          Expanded(
-            child: RightSide(
+    return Padding(
+      padding: const EdgeInsets.all(16),
+      child: Card(
+        color: backgroundColor,
+        elevation: 8,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(32)),
+        child: Row(
+          children: [
+            LeftSide(
               color: color,
-              title: title,
-              status: status,
+              iconData: iconData,
             ),
-          ),
-        ],
+            Expanded(
+              child: RightSide(
+                color: color,
+                title: title,
+                status: status,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
