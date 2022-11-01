@@ -1,14 +1,29 @@
 import 'package:flutter/material.dart';
 
-class Menu extends StatelessWidget {
+class Menu extends StatefulWidget {
   const Menu({Key? key}) : super(key: key);
+
+  @override
+  State<Menu> createState() => _MenuState();
+}
+
+class _MenuState extends State<Menu> {
+  int selectedIndex = 0;
 
   @override
   Widget build(BuildContext context) {
     return Row(
       children: places
           .map(
-            (item) => MenuItem(name: item, onTap: () {}),
+            (item) => MenuItem(
+              name: item,
+              onTap: () {
+                setState(() {
+                  selectedIndex = places.indexOf(item);
+                });
+              },
+              isSelected: selectedIndex == places.indexOf(item),
+            ),
           )
           .toList(),
     );
