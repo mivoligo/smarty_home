@@ -9,6 +9,7 @@ class CardButton extends StatelessWidget {
     required this.title,
     this.status,
     this.onTap,
+    this.onSettingTap,
   }) : super(key: key);
 
   final Color backgroundColor;
@@ -17,6 +18,7 @@ class CardButton extends StatelessWidget {
   final String title;
   final String? status;
   final VoidCallback? onTap;
+  final VoidCallback? onSettingTap;
 
   @override
   Widget build(BuildContext context) {
@@ -28,12 +30,13 @@ class CardButton extends StatelessWidget {
         elevation: 8,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(32)),
         child: InkWell(
-          onTap: () {},
+          onTap: onTap,
           child: Row(
             children: [
               LeftSide(
                 color: color,
                 iconData: iconData,
+                onTap: onSettingTap,
               ),
               Expanded(
                 child: RightSide(
