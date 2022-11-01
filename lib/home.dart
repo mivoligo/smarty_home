@@ -8,11 +8,13 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: const [
-        Menu(),
-        PageContent(),
-      ],
+    return Scaffold(
+      body: Column(
+        children: const [
+          Menu(),
+          PageContent(),
+        ],
+      ),
     );
   }
 }
