@@ -8,6 +8,7 @@ class CardButton extends StatelessWidget {
     this.color = Colors.black87,
     required this.title,
     this.status,
+    this.onTap,
   }) : super(key: key);
 
   final Color backgroundColor;
@@ -15,29 +16,34 @@ class CardButton extends StatelessWidget {
   final IconData iconData;
   final String title;
   final String? status;
+  final VoidCallback? onTap;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(16),
       child: Card(
+        clipBehavior: Clip.antiAlias,
         color: backgroundColor,
         elevation: 8,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(32)),
-        child: Row(
-          children: [
-            LeftSide(
-              color: color,
-              iconData: iconData,
-            ),
-            Expanded(
-              child: RightSide(
+        child: InkWell(
+          onTap: () {},
+          child: Row(
+            children: [
+              LeftSide(
                 color: color,
-                title: title,
-                status: status,
+                iconData: iconData,
               ),
-            ),
-          ],
+              Expanded(
+                child: RightSide(
+                  color: color,
+                  title: title,
+                  status: status,
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
