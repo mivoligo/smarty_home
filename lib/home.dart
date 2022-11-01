@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:smarty_home/extra_components.dart';
 
 import 'menu.dart';
 import 'page_content.dart';
@@ -16,7 +17,9 @@ class Home extends StatelessWidget {
         ],
       ),
       floatingActionButton: const DrawerOpener(),
-      endDrawer: const Drawer(),
+      endDrawer: const Drawer(
+        child: ExtraComponents(),
+      ),
     );
   }
 }
