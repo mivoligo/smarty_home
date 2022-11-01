@@ -12,7 +12,7 @@ class Home extends StatelessWidget {
       body: Column(
         children: const [
           Menu(),
-          PageContent(),
+          Expanded(child: PageContent()),
         ],
       ),
     );

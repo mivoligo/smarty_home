@@ -28,10 +28,12 @@ class CardButton extends StatelessWidget {
             color: color,
             iconData: iconData,
           ),
-          RightSide(
-            color: color,
-            title: title,
-            status: status,
+          Expanded(
+            child: RightSide(
+              color: color,
+              title: title,
+              status: status,
+            ),
           ),
         ],
       ),
