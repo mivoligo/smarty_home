@@ -9,6 +9,8 @@ class PageContent extends StatelessWidget {
     return const CardButton(
       iconData: Icons.lightbulb,
       backgroundColor: Colors.blue,
+      title: 'Lights',
+      status: '3 Lights are on',
     );
   }
 }
