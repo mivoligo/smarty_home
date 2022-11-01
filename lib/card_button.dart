@@ -63,7 +63,9 @@ class LeftSide extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
+            const SizedBox(height: 32),
             Icon(
               iconData,
               size: 64,
@@ -103,12 +105,14 @@ class RightSide extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            title,
-            style: Theme.of(context)
-                .textTheme
-                .displaySmall
-                ?.copyWith(color: color),
+          FittedBox(
+            child: Text(
+              title,
+              style: Theme.of(context)
+                  .textTheme
+                  .displaySmall
+                  ?.copyWith(color: color),
+            ),
           ),
           if (status != null) ...[
             const SizedBox(height: 16),
