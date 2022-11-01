@@ -15,6 +15,20 @@ class Home extends StatelessWidget {
           Expanded(child: PageContent()),
         ],
       ),
+      floatingActionButton: const DrawerOpener(),
+      endDrawer: const Drawer(),
+    );
+  }
+}
+
+class DrawerOpener extends StatelessWidget {
+  const DrawerOpener({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return FloatingActionButton(
+      onPressed: () => Scaffold.of(context).openEndDrawer(),
+      child: const Icon(Icons.add),
     );
   }
 }
