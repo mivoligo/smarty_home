@@ -6,16 +6,11 @@ class Menu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
-      children: [
-        MenuItem(
-          name: 'Favourites',
-          onTap: () {},
-        ),
-        MenuItem(
-          name: 'Master bedroom',
-          onTap: () {},
-        ),
-      ],
+      children: places
+          .map(
+            (item) => MenuItem(name: item, onTap: () {}),
+          )
+          .toList(),
     );
   }
 }
@@ -48,3 +43,12 @@ class MenuItem extends StatelessWidget {
     );
   }
 }
+
+const List<String> places = [
+  'Favourites',
+  'Master bedroom',
+  'Small bedroom',
+  'Living room',
+  'Kitchen',
+  'Office',
+];
